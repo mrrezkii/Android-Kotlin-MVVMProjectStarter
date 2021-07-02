@@ -22,9 +22,13 @@ class ExampleRepository(
         return PreferencesModel(pref.getString(prefExample))
     }
 
-    suspend fun saveDataUsername(exampleEntity: ExampleEntity) {
-        db.exampleData().insert(exampleEntity)
+    suspend fun saveDataExample(exampleEntity: ExampleEntity) {
+        db.exampleDao().insert(exampleEntity)
     }
 
-    fun getDataUsername() = db.exampleData().select()
+    fun getDataExample() = db.exampleDao().select()
+
+    suspend fun deleteDataExample() {
+        db.exampleDao().deleteAll()
+    }
 }

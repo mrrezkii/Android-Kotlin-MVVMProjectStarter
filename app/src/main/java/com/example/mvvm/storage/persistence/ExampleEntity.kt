@@ -6,7 +6,5 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "tableExample")
 data class ExampleEntity(
     @PrimaryKey(autoGenerate = false)
-    val exampleString: String,
-    val exampleInt: Int,
-    val exampleBoolean: Boolean
+    val example: String
 )

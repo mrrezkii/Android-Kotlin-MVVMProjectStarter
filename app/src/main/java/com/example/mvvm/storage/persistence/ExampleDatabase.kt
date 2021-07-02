@@ -11,7 +11,7 @@ import androidx.room.RoomDatabase
     version = 1
 )
 abstract class ExampleDatabase : RoomDatabase() {
-    abstract fun exampleData(): ExampleDao
+    abstract fun exampleDao(): ExampleDao
 
     companion object {
         @Volatile
