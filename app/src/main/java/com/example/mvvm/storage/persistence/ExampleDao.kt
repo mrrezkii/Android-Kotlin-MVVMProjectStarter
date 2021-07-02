@@ -1,5 +1,6 @@
 package com.example.mvvm.storage.persistence
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
@@ -12,4 +13,7 @@ interface ExampleDao {
 
     @Delete
     suspend fun delete(exampleEntity: ExampleEntity)
+
+    @Query("SELECT * FROM tableExample")
+    fun select(): LiveData<List<ExampleEntity>>
 }
